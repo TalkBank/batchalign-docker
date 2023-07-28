@@ -50,4 +50,3 @@ WORKDIR /home/appuser/workdir
 
 # Entryponit to run batchalign
 CMD ["mamba", "run", "--no-capture-output", "-n", "batchalign", "batchalign", "daemon", "--db_user=root", "--db_password=batchalign", "--db_ip=db", "--num_workers=3", "./"]
-
