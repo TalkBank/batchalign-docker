@@ -21,7 +21,7 @@ services:
         condition: service_healthy
     ports:
       - 8080:8080
-    entrypoint: /bin/bash -c "mamba run -n batchalign batchailgn daemon --db_user=root --db_password=batchalign --dp_ip=0.0.0.0 ./"
+    entrypoint: /bin/bash -c "mamba run -n batchalign batchalign daemon --db_user=root --db_password=batchalign --dp_ip=0.0.0.0 ./"
   frontend:
     image: jemokajack/batchalign-frontend:latest
     ports:
