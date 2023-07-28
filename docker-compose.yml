@@ -5,6 +5,8 @@ services:
     image: jemokajack/batchalign-db:latest
     ports:
       - 3306:3306
+    expose:
+      - 3306
     environment:
       MYSQL_ROOT_PASSWORD: batchalign
     healthcheck:
@@ -21,6 +23,8 @@ services:
         condition: service_healthy
     ports:
       - 8080:8080
+    expose:
+      - 8080
     entrypoint: /bin/bash -c "mamba run -n batchalign batchalign daemon --db_user=root --db_password=batchalign --db_ip=0.0.0.0 ./"
   frontend:
     image: jemokajack/batchalign-frontend:latest
