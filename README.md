@@ -1,7 +1,7 @@
 # Batchalign Docker
 
 ## Step 1: Download Docker Desktop
-Follow [these instructions(https://www.docker.com/products/docker-desktop/) to first acquire a copy of Docker Desktop.
+Follow [these instructions](https://www.docker.com/products/docker-desktop/) to first acquire a copy of Docker Desktop.
 
 ## Step 2: Download Manifest
 On a command prompt/terminal, execute:
