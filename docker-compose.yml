@@ -7,6 +7,12 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: batchalign
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=batchalign
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
   backend:
     platform: linux/amd64
     image: jemokajack/batchalign-backend:0.2.40
@@ -17,9 +23,6 @@ services:
       - 8080:8080
   frontend:
     image: jemokajack/batchalign-frontend:latest
-    depends_on:
-      backend:
-        condition: service_healthy
     ports:
       - 80:4173
 
