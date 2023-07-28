@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.49
 
 services:
   db:
@@ -12,14 +12,14 @@ services:
     image: jemokajack/batchalign-backend:0.2.40
     depends_on:
       db:
-        condition: service_healthy
+        condition: service_completed_successfully
     ports:
       - 8080:8080
   frontend:
     image: jemokajack/batchalign-frontend:latest
     depends_on:
       backend:
-        condition: service_healthy
+        condition: service_completed_successfully
     ports:
       - 80:4173
 
