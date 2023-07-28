@@ -6,7 +6,8 @@ services:
     expose:
       - 3306
     environment:
-      MYSQL_ROOT_PASSWORD: batchalign
+      - MYSQL_ROOT_PASSWORD: batchalign
+      - MYSQL_ROOT_HOST: 172.0.0.1/255.255.255.248
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=batchalign
       start_period: 5s
