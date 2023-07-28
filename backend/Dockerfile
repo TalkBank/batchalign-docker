@@ -1,4 +1,4 @@
-FROM condaforge/miniforge3:23.1.0-4
+FROM condaforge/mambaforge:23.1.0-4
 
 EXPOSE 8080
 
@@ -9,14 +9,14 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Installs batchalign
-RUN conda install batchalign -c jemoka -c conda-forge --yes
+RUN mamba install batchalign -c jemoka -c conda-forge --yes
 
 # Creates opt directory
 RUN mkdir opt
 WORKDIR ./opt
 
 # Entryponit to run batchalign
-CMD ["batchalign", "daemon", "--db_user=root", "--db_password=batchalign"]
+CMD ["batchalign", "daemon", "--db_user=root", "--db_password=batchalign", "--db_ip=127.0.0.1", "./"]
 
 
 
