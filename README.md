@@ -74,3 +74,9 @@ docker compose up -d
 
 ### Step 5: Wait
 Wait a little as the service provisions. You can head back to Batchaligning!
+
+Open your web browser of choice and navigate to
+
+```bash
+http://localhost:4173
+```
