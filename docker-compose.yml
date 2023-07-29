@@ -16,19 +16,21 @@ services:
       retries: 55
   backend:
     platform: linux/amd64
-    image: jemokajack/batchalign-backend:0.2.40
+    image: jemokajack/batchalign-backend:0.2.40-3
     depends_on:
       db:
         condition: service_healthy
     ports:
       - 8080:8080
-    expose:
-      - 8080
-    entrypoint: /bin/bash -c "mamba run -n batchalign batchalign daemon --db_user=root --db_password=batchalign --db_ip=db ./"
   frontend:
     image: jemokajack/batchalign-frontend:latest
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_started
     ports:
-      - 80:4173
+      - 4173:4173
 
 
 
