@@ -22,13 +22,20 @@ services:
         condition: service_healthy
     ports:
       - 8080:8080
+    healthcheck:
+      # no --fail because 404 is fine, and $$ apparently because docker needs escaping the $
+      test: wget --no-verbose --spider -q "http://0.0.0.0:8080" || [ $$? -eq 8 ]
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 180
   frontend:
     image: jemokajack/batchalign-frontend:latest
     depends_on:
       db:
         condition: service_healthy
       backend:
-        condition: service_started
+        condition: service_healthy
     ports:
       - 4173:4173
 
