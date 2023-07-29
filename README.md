@@ -6,6 +6,8 @@ Follow these instructions to get started.
 ### Step 1: Download Docker Desktop
 Follow [these instructions](https://www.docker.com/products/docker-desktop/) to first acquire a copy of Docker Desktop. Once downloaded, open the app. See to it that the lower-left hand corner of the app is green: this means that Docker is ready.
 
+For Windows users, you will need a tool to open `.tar.gz` files to read the processed output, such as [7-Zip](https://7-zip.org/).
+
 ### Step 2: Download Manifest
 On a command prompt/terminal, execute:
 
