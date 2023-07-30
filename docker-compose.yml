@@ -16,7 +16,7 @@ services:
       retries: 55
   backend:
     platform: linux/amd64
-    image: jemokajack/batchalign-backend:0.2.40-3
+    image: jemokajack/batchalign-backend:0.2.47
     depends_on:
       db:
         condition: service_healthy
