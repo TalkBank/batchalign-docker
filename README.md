@@ -36,6 +36,8 @@ http://localhost:4173
 You should see a web interface for Batchalign; follow the instructions provided to tag your files.
 
 ## Seeing Logs 
+Unfortunately, the web front-end doesn't provide a progress bar, so to see the logs, follow these instructions.
+
 To debug or get progress on runs, you may want to see the batchalign logs. In the same *directory* as where you first ran Batchalign following the instructions above, but not necessarily needed to be the same terminal, you can run:
 
 ```bash
@@ -52,6 +54,8 @@ On a command prompt/terminal, execute:
 curl -O https://raw.githubusercontent.com/TalkBank/batchalign-docker/master/docker-compose.yml
 ```
 
+This will replace the old version of the manifest file.
+
 ### Step 2: Stop and Remove Old Version
 On the *same* command prompt/terminal as the line before, execute:
 
@@ -60,12 +64,14 @@ docker compose stop
 docker compose rm -f
 ```
 
-### Step 3: Pull New Data
+### Step 3: Pull New Software
 On the *same* command prompt/terminal as the line before, execute:
 
 ```bash
 docker compose pull
 ```
+
+This will pull new versions of the software to Docker.
 
 ### Step 4: Run Services
 On the *same* command prompt/terminal as the line before, execute:
