@@ -29,7 +29,7 @@ ENV PATH="/home/appuser/mambaforge/bin:${PATH}"
 ARG PATH="/home/appuser/mambaforge/bin:${PATH}"
 
 # Installs batchalign
-RUN mamba create -n batchalign python==3.10 kaldi=5.5.1068=cpu_h05f3a92_1 batchalign==0.2.47 -c jemoka -c conda-forge --yes
+RUN mamba create -n batchalign python==3.10 kaldi=5.5.1068=cpu_h05f3a92_1 batchalign==0.3.1 -c jemoka -c conda-forge --yes
 
 # download everything
 RUN mamba run -n batchalign mfa model download g2p english_us_arpa
