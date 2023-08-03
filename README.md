@@ -6,6 +6,9 @@ Follow these instructions to get started.
 ### Step 1: Download Docker Desktop
 Follow [these instructions](https://www.docker.com/products/docker-desktop/) to first acquire a copy of Docker Desktop. Once downloaded, open the app. See to it that the lower-left hand corner of the app is green: this means that Docker is ready.
 
+#### Windows Users
+At this point, some Windows users may see an error to the tune of "You are not allowed to use Docker, you must be in the "docker-users" group." If that is the case, follow [these instructions](https://icij.gitbook.io/datashare/usage/faq/common-errors/you-are-not-allowed-to-use-docker-you-must-be-in-the-docker-users-group-.-what-should-i-do) to mitigate this error.
+
 ### Step 2: Download Manifest
 On a command prompt/terminal, execute:
 
